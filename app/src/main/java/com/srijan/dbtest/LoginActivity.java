@@ -42,7 +42,7 @@ public class LoginActivity extends ActionBarActivity {
     private Firebase mFirebaseRef; //
     private AuthData mAuthData; ///Data from the authenticated user
     private Button mPasswordLoginButton;
-    private EditText mEditEmail, mEditPassword;
+//    private String email, pass;
 
 
     @Override
@@ -52,22 +52,23 @@ public class LoginActivity extends ActionBarActivity {
         Firebase.setAndroidContext(this);
         setContentView(R.layout.activity_login);
 
-        mEditEmail   = (EditText)findViewById(R.id.editText1);
-        mEditPassword = (EditText) findViewById(R.id.editText2);
+
         mPasswordLoginButton = (Button) findViewById(R.id.login_with_password);
 
         mPasswordLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginWithPassword(mEditEmail.toString(), mEditPassword.toString());
+//                email = ((EditText) (findViewById(R.id.editText1))).getText().toString();
+//                pass = ((EditText) findViewById(R.id.editText2)).toString();
+
+                loginWithPassword(((EditText) (findViewById(R.id.editText1))).getText().toString()
+                        , ((EditText) (findViewById(R.id.editText2))).getText().toString());
             }
         });
 
         mLoggedInStatusTextView = (TextView) findViewById(R.id.login_status);
 
-        /* Create the Firebase ref that is used for all authentication with Firebase */
-//        mFirebaseRef = new Firebase(getResources().getString(R.string.firebase_url));
-            mFirebaseRef = new Firebase("https://scorching-heat-4537.firebaseio.com/");
+        mFirebaseRef = new Firebase("https://scorching-heat-4537.firebaseio.com/");
 
         /* Setup the progress dialog that is displayed later when authenticating with Firebase */
         mAuthProgressDialog = new ProgressDialog(this);
@@ -195,8 +196,24 @@ public class LoginActivity extends ActionBarActivity {
         }
     }
 
+    private class ResultHandler implements Firebase.ResultHandler {
+
+        @Override
+        public void onError(FirebaseError firebaseError) {
+            mAuthProgressDialog.hide();
+            showErrorDialog(firebaseError.toString());
+        }
+
+        @Override
+        public void onSuccess() {
+
+        }
+    }
+
     public void register(View view) {
-        mFirebaseRef.createUser();
+        mFirebaseRef.createUser(((EditText) (findViewById(R.id.editText1))).getText().toString()
+                , ((EditText) (findViewById(R.id.editText2))).getText().toString(),
+                new ResultHandler());
     }
 
 
