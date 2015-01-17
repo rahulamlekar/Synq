@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Synq</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="username">Username</string>
+	<string name="password">Password</string>
+	<string name="login">Log In</string>
+	<string name="newacc">Create New Account</string>
+	<string name="forgotpass">Forgot Password?</string>
+</resources>
