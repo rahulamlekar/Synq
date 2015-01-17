@@ -43,7 +43,8 @@
         android:layout_alignRight="@+id/editText2"
         android:layout_centerVertical="true"
         android:minWidth="88dip"
-        android:text="@string/login" />
+        android:text="@string/login"
+        android:onClick="sendMessage" />
 
     <Button
         android:id="@+id/button2"
