@@ -4,5 +4,7 @@
     <string name="app_name">DBTest</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="login_with_password">Login!</string>
+    <string name="action_logout">Logout</string>
 
 </resources>
