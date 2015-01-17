@@ -30,6 +30,7 @@ import com.google.android.gms.plus.Plus;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import android.widget.EditText;
 
 
 public class LoginActivity extends ActionBarActivity {
@@ -41,6 +42,7 @@ public class LoginActivity extends ActionBarActivity {
     private Firebase mFirebaseRef; //
     private AuthData mAuthData; ///Data from the authenticated user
     private Button mPasswordLoginButton;
+    private EditText mEditEmail, mEditPassword;
 
 
     @Override
@@ -50,11 +52,14 @@ public class LoginActivity extends ActionBarActivity {
         Firebase.setAndroidContext(this);
         setContentView(R.layout.activity_login);
 
+        mEditEmail   = (EditText)findViewById(R.id.editText1);
+        mEditPassword = (EditText) findViewById(R.id.editText2);
         mPasswordLoginButton = (Button) findViewById(R.id.login_with_password);
+
         mPasswordLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginWithPassword();
+                loginWithPassword(mEditEmail.toString(), mEditPassword.toString());
             }
         });
 
@@ -190,14 +195,14 @@ public class LoginActivity extends ActionBarActivity {
         }
     }
 
-
     public void register(View view) {
         mFirebaseRef.createUser();
     }
 
-    public void loginWithPassword() {
+
+    public void loginWithPassword(String email, String password) {
         mAuthProgressDialog.show();
-        mFirebaseRef.authWithPassword("test@firebaseuser.com", "test1234", new AuthResultHandler("password"));
+        mFirebaseRef.authWithPassword(email, password, new AuthResultHandler(password));
     }
 
 }
