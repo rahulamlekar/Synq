@@ -72,6 +72,7 @@
         android:layout_below="@+id/button1"
         android:layout_marginTop="25dp"
         android:text="@string/newacc"
+        android:onClick="register"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

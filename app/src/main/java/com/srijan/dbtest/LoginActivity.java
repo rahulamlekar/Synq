@@ -191,6 +191,10 @@ public class LoginActivity extends ActionBarActivity {
     }
 
 
+    public void register(View view) {
+        mFirebaseRef.createUser();
+    }
+
     public void loginWithPassword() {
         mAuthProgressDialog.show();
         mFirebaseRef.authWithPassword("test@firebaseuser.com", "test1234", new AuthResultHandler("password"));
