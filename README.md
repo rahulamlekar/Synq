@@ -1,0 +1,2 @@
+# Synq
+Synq dev team
