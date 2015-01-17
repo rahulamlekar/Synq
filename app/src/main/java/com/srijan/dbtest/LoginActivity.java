@@ -36,20 +36,10 @@ public class LoginActivity extends ActionBarActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
 
-
-    /* TextView that is used to display information about the logged in user */
-    private TextView mLoggedInStatusTextView;
-
-    /* A dialog that is presented until the Firebase authentication finished. */
-    private ProgressDialog mAuthProgressDialog;
-
-    /* A reference to the Firebase */
-    private Firebase mFirebaseRef;
-
-    /* Data from the authenticated user */
-    private AuthData mAuthData;
-
-
+    private TextView mLoggedInStatusTextView; //TextView info about user
+    private ProgressDialog mAuthProgressDialog; //dialog until Firebase authentication is finished
+    private Firebase mFirebaseRef; //
+    private AuthData mAuthData; ///Data from the authenticated user
     private Button mPasswordLoginButton;
 
 
