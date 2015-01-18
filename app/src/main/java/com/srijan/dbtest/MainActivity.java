@@ -33,15 +33,14 @@ public class MainActivity extends ActionBarActivity {
             currUser = extra.getString("uid");
         }
         setContentView(R.layout.activity_main);
-
+        setField();
     }
 
-    public void putData(Card c) {
+    public void postinfo() {
         f.child("users").child(currUser).setValue(c);
     }
 
-    public void setField(Card c) {
-
+    public void setField() {
         c.firstName = ((EditText) (findViewById(R.id.editFirst))).getText().toString();
         c.lastName = ((EditText) (findViewById(R.id.editLast))).getText().toString();
         c.emailID = ((EditText) (findViewById(R.id.editEmail))).getText().toString();

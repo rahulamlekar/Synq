@@ -92,6 +92,7 @@
         android:layout_height="wrap_content"
         android:text="Update Info"
         android:id="@+id/postinfo"
+        android:onClick="postinfo"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
