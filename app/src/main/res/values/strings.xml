@@ -10,6 +10,8 @@
     <string name="username">Email ID</string>
     <string name="newacc">Register</string>
     <string name="forgotpass">Forgot Password?</string>
-
+    <string name="title_activity_profile">Profile</string>
+    <string name="name">Name</string>
+    <string name="mobile">Mobile No</string>
 
 </resources>
