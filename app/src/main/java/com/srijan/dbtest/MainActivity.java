@@ -99,6 +99,13 @@ public class MainActivity extends ActionBarActivity {
             mobile = innerMost.get("TYPE_MOBILE");
             work = innerMost.get("TYPE_MOBILE");
             home = innerMost.get("TYPE_HOME");
+
+
+
+
+
+
+            
         }
 
 
