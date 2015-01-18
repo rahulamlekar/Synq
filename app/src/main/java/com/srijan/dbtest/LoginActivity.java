@@ -169,12 +169,6 @@ public class LoginActivity extends ActionBarActivity {
                 .show();
     }
 
-    public void gotoProfile (View view) {
-        Intent intent = new Intent(this, Profile.class);
-        startActivityForResult(intent, 1);
-        overridePendingTransition(R.anim.push_up, R.anim.blank);
-    }
-
     /**
      * Utility class for authentication results
      */
@@ -194,7 +188,8 @@ public class LoginActivity extends ActionBarActivity {
             String uid = authData.getUid();
             Intent i = new Intent(getBaseContext(), MainActivity.class);
             i.putExtra("uid", uid);
-            startActivity(i);
+            startActivityForResult(i, 1);
+            overridePendingTransition(R.anim.push_up, R.anim.blank);
         }
 
         @Override
