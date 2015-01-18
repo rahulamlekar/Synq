@@ -1,6 +1,7 @@
 package com.srijan.dbtest;
 
 import android.content.ContentProviderOperation;
+import android.content.ContentProviderResult;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -70,7 +71,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 post.setBackgroundColor(Color.parseColor("#42ff23"));
                 setField();
-                post.setBackgroundResource(android.R.drawable.btn_default);
+                //post.setBackgroundResource(android.R.drawable.btn_default);
             }
         });
 
@@ -79,7 +80,7 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v) {
                 syncB.setBackgroundColor(Color.parseColor("#42ff23"));
                 sync();
-                syncB.setBackgroundResource(android.R.drawable.btn_default);
+                //syncB.setBackgroundResource(android.R.drawable.btn_default);
             }
         });
 
@@ -102,14 +103,10 @@ public class MainActivity extends ActionBarActivity {
             mobile = innerMost.get("TYPE_MOBILE");
             work = innerMost.get("TYPE_MOBILE");
             home = innerMost.get("TYPE_HOME");
-
-            update(firstName, lastName,mobile,work,home,emailID);
-
+            System.out.println(firstName + lastName + emailID + mobile);
+            update(firstName, lastName, mobile, work, home, emailID);
 
         }
-
-
-
     }
 
 
@@ -117,6 +114,8 @@ public class MainActivity extends ActionBarActivity {
 
     public void update(String firstname, String lastname, String mobile, String work, String home, String email)
     {
+        System.out.println("Running update");
+
         int id = 1;
 
         ArrayList<ContentProviderOperation> ops = new ArrayList<ContentProviderOperation>();
@@ -130,7 +129,7 @@ public class MainActivity extends ActionBarActivity {
 
         // Number
         builder = ContentProviderOperation.newUpdate(ContactsContract.Data.CONTENT_URI);
-        builder.withSelection(ContactsContract.Data.CONTACT_ID + "=?" + " AND " + ContactsContract.Data.MIMETYPE + "=?"+ " AND " + ContactsContract.CommonDataKinds.Organization.TYPE + "=?", new String[]{String.valueOf(id), ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE, String.valueOf(ContactsContract.CommonDataKinds.Phone.TYPE_HOME)});
+        builder.withSelection(ContactsContract.Data.CONTACT_ID + "=?" + " AND " + ContactsContract.Data.MIMETYPE + "=?"+ " AND " + ContactsContract.CommonDataKinds.Organization.TYPE + "=?", new String[]{String.valueOf(id), ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE, String.valueOf(Phone.TYPE_MOBILE)});
         builder.withValue(Phone.NUMBER, mobile);
         ops.add(builder.build());
 
@@ -162,6 +161,7 @@ public class MainActivity extends ActionBarActivity {
 
 
     public void postinfo() {
+        System.out.println("Posting info");
         f.child("users").child(currUser).setValue(c);
         HashSet<Integer> tempUserList = new HashSet<Integer>();
         if (!currUser.equals("simplelogin:4")) tempUserList.add(4);
