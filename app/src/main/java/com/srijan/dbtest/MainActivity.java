@@ -1,9 +1,11 @@
 package com.srijan.dbtest;
 
+import android.provider.ContactsContract;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.view.*;
 
@@ -34,12 +36,21 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    public putData(Card c) {
+    public void putData(Card c) {
         f.child("users").child(currUser).setValue(c);
     }
 
-    public populateInfo() {
+    public void setField(Card c) {
 
+        c.firstName = ((EditText) (findViewById(R.id.editFirst))).getText().toString();
+        c.lastName = ((EditText) (findViewById(R.id.editLast))).getText().toString();
+        c.emailID = ((EditText) (findViewById(R.id.editEmail))).getText().toString();
+        String mobile = ((EditText) (findViewById(R.id.editPhone1))).getText().toString();
+        String home = ((EditText) (findViewById(R.id.editPhone2))).getText().toString();
+        String work = ((EditText) (findViewById(R.id.editPhone3))).getText().toString();
+        c.numbers.put("TYPE_MOBILE", mobile);
+        c.numbers.put("TYPE_HOME", home);
+        c.numbers.put("TYPE_WORK", work);
     }
 
 

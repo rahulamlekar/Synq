@@ -11,42 +11,46 @@
         android:id="@+id/imageView"
         android:src="@drawable/synqlogo"
         android:layout_toLeftOf="@+id/editFirst"
-        android:layout_toStartOf="@+id/editFirst"
-        android:layout_alignBottom="@+id/editEmail" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/editPhone1" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="First Name"
+        android:hint="First Name"
         android:ems="10"
         android:id="@+id/editFirst"
         android:layout_alignTop="@+id/imageView"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Last Name"
         android:ems="10"
+        android:hint="Last name"
         android:id="@+id/editLast"
-        android:layout_alignLeft="@+id/editPhone1"
-        android:layout_alignStart="@+id/editFirst"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/editFirst"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:text="Email ID"
         android:id="@+id/editEmail"
-        android:layout_alignParentTop="true"
+        android:hint="Email ID"
+        android:layout_below="@+id/editLast"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="43dp" />
+        android:layout_marginTop="25dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -54,6 +58,7 @@
         android:inputType="phone"
         android:ems="10"
         android:id="@+id/editPhone1"
+        android:hint="Phone - Mobile"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
@@ -64,6 +69,7 @@
         android:ems="10"
         android:id="@+id/editPhone2"
         android:layout_marginTop="50dp"
+        android:hint="Phone - Home"
         android:layout_below="@+id/editPhone1"
         android:layout_alignLeft="@+id/editPhone1"
         android:layout_alignStart="@+id/editPhone1" />
@@ -73,6 +79,7 @@
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
+        android:hint="Phone - Work"
         android:id="@+id/editPhone3"
         android:layout_below="@+id/editPhone2"
         android:layout_alignLeft="@+id/editPhone2"
@@ -87,5 +94,4 @@
         android:id="@+id/postinfo"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
-    
 </RelativeLayout>
