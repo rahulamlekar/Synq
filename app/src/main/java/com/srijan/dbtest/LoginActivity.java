@@ -190,6 +190,10 @@ public class LoginActivity extends ActionBarActivity {
             mAuthProgressDialog.hide();
             Log.i(TAG, provider + " auth successful");
             setAuthenticatedUser(authData);
+            String uid = authData.getUid();
+            Intent i = new Intent(getBaseContext(), MainActivity.class);
+            i.putExtra("uid", uid);
+            startActivity(i);
         }
 
         @Override

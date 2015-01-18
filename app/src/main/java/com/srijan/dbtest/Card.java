@@ -6,10 +6,10 @@ import java.util.HashSet;
 
 /**
  * Created by Srijan on 1/17/15.
+ * Represents a contact card
  */
 public class Card {
 
-    public String firstName, lastName;
     public HashSet<ContactsContract.CommonDataKinds.Phone> numbers;
     public ContactsContract.CommonDataKinds.Email emailID;
     public ContactsContract.CommonDataKinds.Photo picture;

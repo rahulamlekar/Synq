@@ -18,17 +18,24 @@ import org.json.JSONObject;
 public class MainActivity extends ActionBarActivity {
 
     private Firebase f;
-    private JSONObject card;
+    private Card c;
     private String currUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Firebase.setAndroidContext(this);
+        Bundle extra = getIntent().getExtras();
         f = new Firebase("https://scorching-heat-4537.firebaseio.com/");
-        currUser = "";//get from Dhillon
+        if(extra!=null) {
+            currUser = extra.getString("uid");
+        }
         setContentView(R.layout.activity_main);
 
+    }
+
+    public putData(Card c) {
+        f.child("users").child(currUser).setValue(c);
     }
 
     public populateInfo() {

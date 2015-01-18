@@ -5,51 +5,55 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <!--<ImageView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/imageView"-->
-        <!--android:src="@drawable/Synq-logo" />-->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@drawable/synqlogo"
+        android:layout_toLeftOf="@+id/editFirst"
+        android:layout_toStartOf="@+id/editFirst"
+        android:layout_alignBottom="@+id/editEmail" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="First Name"
         android:ems="10"
-        android:id="@+id/editText6"
-        android:layout_below="@+id/imageView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/editFirst"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_alignLeft="@+id/imageView"
+        android:layout_alignStart="@+id/imageView" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
+        android:inputType="textPersonName"
+        android:text="Last Name"
         android:ems="10"
-        android:id="@+id/editText8"
-        android:layout_marginTop="135dp"
-        android:layout_below="@+id/editText6"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/editLast"
+        android:layout_alignLeft="@+id/editPhone1"
+        android:layout_alignStart="@+id/editFirst"
+        android:layout_marginTop="20dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/editText7"
-        android:layout_below="@+id/editText6"
+        android:text="Email ID"
+        android:id="@+id/editEmail"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="48dp" />
+        android:layout_marginTop="43dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:id="@+id/editText9"
+        android:id="@+id/editPhone1"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
@@ -58,29 +62,29 @@
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:id="@+id/editText10"
+        android:id="@+id/editPhone2"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/editText9"
-        android:layout_alignLeft="@+id/editText9"
-        android:layout_alignStart="@+id/editText9" />
+        android:layout_below="@+id/editPhone1"
+        android:layout_alignLeft="@+id/editPhone1"
+        android:layout_alignStart="@+id/editPhone1" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="phone"
         android:ems="10"
-        android:id="@+id/editText11"
-        android:layout_below="@+id/editText10"
-        android:layout_alignLeft="@+id/editText10"
-        android:layout_alignStart="@+id/editText10"
+        android:id="@+id/editPhone3"
+        android:layout_below="@+id/editPhone2"
+        android:layout_alignLeft="@+id/editPhone2"
+        android:layout_alignStart="@+id/editPhone2"
         android:layout_marginTop="52dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button2"
+        android:text="Update Info"
+        android:id="@+id/postinfo"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
