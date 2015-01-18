@@ -12,41 +12,28 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
+import org.json.JSONObject;
+
 
 public class MainActivity extends ActionBarActivity {
 
+    private Firebase f;
+    private JSONObject card;
+    private String currUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//       Firebase.setAndroidContext(this);
+        Firebase.setAndroidContext(this);
+        f = new Firebase("https://scorching-heat-4537.firebaseio.com/");
+        currUser = "";//get from Dhillon
         setContentView(R.layout.activity_main);
 
-        //Firebase f = new Firebase("https://scorching-heat-4537.firebaseio.com/");
-        //f.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-////                TextView dataSum = (TextView)findViewById(R.id.dataSum);
-////                dataSum.setText(dataSnapshot.getValue(String.class));
-//            }
-//
-//            @Override
-//            public void onCancelled(FirebaseError firebaseError) {
-//
-//            }
-//        });
     }
 
-//    public void data1(View view) {
-//        Firebase f = new Firebase("https://scorching-heat-4537.firebaseio.com/");
-//        f.setValue(1);
-//    }
-//
-//    public void data2(View view) {
-//        Firebase f = new Firebase("https://scorching-heat-4537.firebaseio.com/");
-//        f.setValue(2);
-//    }
+    public populateInfo() {
 
+    }
 
 
     @Override
