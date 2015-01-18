@@ -40,9 +40,8 @@ public class LoginActivity extends ActionBarActivity {
     private TextView mLoggedInStatusTextView; //TextView info about user
     private ProgressDialog mAuthProgressDialog; //dialog until Firebase authentication is finished
     private Firebase mFirebaseRef; //
-    private AuthData mAuthData; ///Data from the authenticated user
+    private AuthData mAuthData; //Data from the authenticated user
     private Button mPasswordLoginButton;
-//    private String email, pass;
 
 
     @Override
@@ -58,8 +57,6 @@ public class LoginActivity extends ActionBarActivity {
         mPasswordLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                email = ((EditText) (findViewById(R.id.editText1))).getText().toString();
-//                pass = ((EditText) findViewById(R.id.editText2)).toString();
 
                 loginWithPassword(((EditText) (findViewById(R.id.editText1))).getText().toString()
                         , ((EditText) (findViewById(R.id.editText2))).getText().toString());
@@ -171,6 +168,12 @@ public class LoginActivity extends ActionBarActivity {
                 .show();
     }
 
+    public void gotoProfile (View view) {
+        Intent intent = new Intent(this, Profile.class);
+        startActivityForResult(intent, 1);
+        overridePendingTransition(R.anim.push_up, R.anim.blank);
+    }
+
     /**
      * Utility class for authentication results
      */
@@ -206,7 +209,8 @@ public class LoginActivity extends ActionBarActivity {
 
         @Override
         public void onSuccess() {
-
+            loginWithPassword(((EditText) (findViewById(R.id.editText1))).getText().toString()
+                    , ((EditText) (findViewById(R.id.editText2))).getText().toString());
         }
     }
 
@@ -216,10 +220,8 @@ public class LoginActivity extends ActionBarActivity {
                 new ResultHandler());
     }
 
-
     public void loginWithPassword(String email, String password) {
         mAuthProgressDialog.show();
         mFirebaseRef.authWithPassword(email, password, new AuthResultHandler(password));
     }
-
 }
