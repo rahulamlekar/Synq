@@ -1,9 +1,11 @@
 package com.srijan.dbtest;
 
+import android.content.ContentProviderOperation;
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
+import android.provider.ContactsContract;
 import android.provider.ContactsContract.*;
 import android.provider.ContactsContract.CommonDataKinds.*;
 import android.support.v7.app.ActionBarActivity;
@@ -22,6 +24,7 @@ import com.firebase.client.ValueEventListener;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -100,16 +103,47 @@ public class MainActivity extends ActionBarActivity {
             work = innerMost.get("TYPE_MOBILE");
             home = innerMost.get("TYPE_HOME");
 
+            update(firstName, lastName,mobile,work,home,emailID);
 
 
-
-
-
-            
         }
 
 
 
+    }
+
+
+
+
+    public void update(String firstname, String lastname, String mobile, String work, String home, String email)
+    {
+        int id = 1;
+
+        ArrayList<ContentProviderOperation> ops = new ArrayList<ContentProviderOperation>();
+
+        // Name
+        ContentProviderOperation.Builder builder = ContentProviderOperation.newUpdate(ContactsContract.Data.CONTENT_URI);
+        builder.withSelection(ContactsContract.Data.CONTACT_ID + "=?" + " AND " + ContactsContract.Data.MIMETYPE + "=?", new String[]{String.valueOf(id), ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE});
+        builder.withValue(ContactsContract.CommonDataKinds.StructuredName.FAMILY_NAME, lastname);
+        builder.withValue(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, firstname);
+        ops.add(builder.build());
+
+        // Number
+        builder = ContentProviderOperation.newUpdate(ContactsContract.Data.CONTENT_URI);
+        builder.withSelection(ContactsContract.Data.CONTACT_ID + "=?" + " AND " + ContactsContract.Data.MIMETYPE + "=?"+ " AND " + ContactsContract.CommonDataKinds.Organization.TYPE + "=?", new String[]{String.valueOf(id), ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE, String.valueOf(ContactsContract.CommonDataKinds.Phone.TYPE_HOME)});
+        builder.withValue(Phone.NUMBER, mobile);
+        ops.add(builder.build());
+
+
+        // Update
+        try
+        {
+            getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
 //    public static int getContactIDFromNumber(String contactNumber,Context context)
