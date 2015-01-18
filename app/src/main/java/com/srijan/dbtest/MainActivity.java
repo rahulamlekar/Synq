@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.*;
@@ -22,6 +23,7 @@ public class MainActivity extends ActionBarActivity {
     private Firebase f;
     private Card c;
     private String currUser;
+    private Button post;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,14 @@ public class MainActivity extends ActionBarActivity {
             currUser = extra.getString("uid");
         }
         setContentView(R.layout.activity_main);
-        setField();
+
+        post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setField();
+            }
+        });
+
     }
 
     public void postinfo() {

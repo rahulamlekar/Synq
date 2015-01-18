@@ -2,46 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/Users/adwaydhillon/Documents/Development/MHacks15/Synq/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/adwaydhillon/Documents/Development/MHacks15/Synq/app/build/intermediates/pre-dexed/debug/classes-cddaa8a5a67a0c1a8a4886c664dfb1c62696832b.jar" />
-    </item>
-    <item
-        jar="/Users/adwaydhillon/Documents/Development/MHacks15/Synq/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
-        <dex dex="/Users/adwaydhillon/Documents/Development/MHacks15/Synq/app/build/intermediates/pre-dexed/debug/classes-2ea7bdbea3303a4706d44b913d1a9df5aadd0b51.jar" />
-    </item>
-    <item
-        jar="/Users/adwaydhillon/Documents/Development/MHacks15/Synq/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jar="/Users/Srijan/Development/MHacks5/Synq/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/adwaydhillon/Documents/Development/MHacks15/Synq/app/build/intermediates/pre-dexed/debug/classes-7801e504a19fa0f420c913caf7e8b29645340651.jar" />
+        <dex dex="/Users/Srijan/Development/MHacks5/Synq/app/build/intermediates/pre-dexed/debug/classes-b08d86ab2846d1841ae14fe57b6a2116871c37e5.jar" />
     </item>
     <item
-        jar="/Users/adwaydhillon/Documents/Development/Android/adt-bundle-mac-x86_64-20140321/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jar="/Users/Srijan/Development/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/adwaydhillon/Documents/Development/MHacks15/Synq/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-fedf07b897c049a9e967f6ab69ef2df02653adf4.jar" />
+        <dex dex="/Users/Srijan/Development/MHacks5/Synq/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-a1575a9dcb5e2bc46bba8cf59954655a8711c476.jar" />
     </item>
     <item
-        jar="/Users/adwaydhillon/Documents/Development/MHacks15/Synq/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jar="/Users/Srijan/Development/MHacks5/Synq/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/Users/Srijan/Development/MHacks5/Synq/app/build/intermediates/pre-dexed/debug/classes-213b488732557b970e2a51a99969f2fec9b7d382.jar" />
+    </item>
+    <item
+        jar="/Users/Srijan/Development/MHacks5/Synq/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/Srijan/Development/MHacks5/Synq/app/build/intermediates/pre-dexed/debug/classes-d483add03e356de4c630bf18602b861922bc1531.jar" />
+    </item>
+    <item
+        jar="/Users/Srijan/Development/MHacks5/Synq/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/adwaydhillon/Documents/Development/MHacks15/Synq/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-376d7343bf99bb43e59d785c72d312b5c6f3e614.jar" />
+        <dex dex="/Users/Srijan/Development/MHacks5/Synq/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-a647b6fc88dcd9a34ddae6ef451c814d608102bc.jar" />
     </item>
     <item
-        jar="/Users/adwaydhillon/Documents/Development/MHacks15/Synq/app/libs/firebase-client-android-2.1.1.jar"
+        jar="/Users/Srijan/Development/MHacks5/Synq/app/libs/firebase-client-android-2.1.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="c1a0a72a0b56d9775f1df606cb2b0dcacdcf6f47">
-        <dex dex="/Users/adwaydhillon/Documents/Development/MHacks15/Synq/app/build/intermediates/pre-dexed/debug/firebase-client-android-2.1.1-bf974a781b2b5866ff53cee2730515555d565dfe.jar" />
+        <dex dex="/Users/Srijan/Development/MHacks5/Synq/app/build/intermediates/pre-dexed/debug/firebase-client-android-2.1.1-fbfa657ed73eecad196a57117e588b5a9c3556de.jar" />
     </item>
 
 </items>
