@@ -1,6 +1,11 @@
 package com.srijan.dbtest;
 
-import android.provider.ContactsContract;
+import android.content.Context;
+import android.database.Cursor;
+import android.graphics.Color;
+import android.net.Uri;
+import android.provider.ContactsContract.*;
+import android.provider.ContactsContract.CommonDataKinds.*;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,13 +22,19 @@ import com.firebase.client.ValueEventListener;
 
 import org.json.JSONObject;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Random;
+
 
 public class MainActivity extends ActionBarActivity {
 
     private Firebase f;
     private Card c;
     private String currUser;
-    private Button post;
+    private Button post, syncB;
+    private DataSnapshot data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +48,85 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         c = new Card();
         post = (Button) findViewById(R.id.postinfo);
+        syncB = (Button) findViewById(R.id.syncButton);
+
+        f.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                data = snapshot;
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                System.out.println("The read failed: " + firebaseError.getMessage());
+            }
+        });
 
         post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                post.setBackgroundColor(Color.parseColor("#42ff23"));
                 setField();
+                post.setBackgroundResource(android.R.drawable.btn_default);
             }
         });
 
+        syncB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                syncB.setBackgroundColor(Color.parseColor("#42ff23"));
+                sync();
+                syncB.setBackgroundResource(android.R.drawable.btn_default);
+            }
+        });
+
+
     }
+
+
+    public void sync() {
+
+        Object o = data.getValue();
+        HashMap<String, HashMap> vals = ((HashMap<String, HashMap>)o).get("users");
+        Collection<HashMap> firstMap = vals.values();
+        HashMap<String, String> innerMost;
+        String mobile, work, home, firstName, lastName, emailID;
+        for(HashMap innerLayer : firstMap) {
+            firstName = innerLayer.get("firstName").toString();
+            lastName = innerLayer.get("lastName").toString();
+            emailID = innerLayer.get("emailID").toString();
+            innerMost = (HashMap) innerLayer.get("numbers");
+            mobile = innerMost.get("TYPE_MOBILE");
+            work = innerMost.get("TYPE_MOBILE");
+            home = innerMost.get("TYPE_HOME");
+        }
+
+
+
+    }
+
+//    public static int getContactIDFromNumber(String contactNumber,Context context)
+//    {
+//        contactNumber = Uri.encode(contactNumber);
+//        int phoneContactID = new Random().nextInt();
+//        Cursor contactLookupCursor = context.getContentResolver().query(Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI,Uri.contactNumber),new String[] {PhoneLookup.DISPLAY_NAME, PhoneLookup._ID}, null, null, null);
+//        while(contactLookupCursor.moveToNext()){
+//            phoneContactID = contactLookupCursor.getInt(contactLookupCursor.getColumnIndexOrThrow(PhoneLookup._ID));
+//        }
+//        contactLookupCursor.close();
+//
+//        return phoneContactID;
+//
+//    }
+
 
     public void postinfo() {
         f.child("users").child(currUser).setValue(c);
+        HashSet<Integer> tempUserList = new HashSet<Integer>();
+        if (!currUser.equals("simplelogin:4")) tempUserList.add(4);
+        if (!currUser.equals("simplelogin:5")) tempUserList.add(5);
+        if (!currUser.equals("simplelogin:7")) tempUserList.add(7);
+        f.child("users").child(currUser).child("friends").setValue(tempUserList);
     }
 
     public void setField() {

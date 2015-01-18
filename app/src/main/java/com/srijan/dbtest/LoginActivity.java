@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -57,7 +58,7 @@ public class LoginActivity extends ActionBarActivity {
         mPasswordLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                mPasswordLoginButton.setBackgroundColor(Color.parseColor("#42ff23"));
                 loginWithPassword(((EditText) (findViewById(R.id.editText1))).getText().toString()
                         , ((EditText) (findViewById(R.id.editText2))).getText().toString());
             }
@@ -219,6 +220,8 @@ public class LoginActivity extends ActionBarActivity {
     }
 
     public void register(View view) {
+        Button r = (Button) findViewById(R.id.button2);
+        r.setBackgroundColor(Color.parseColor("#42ff23"));
         mFirebaseRef.createUser(((EditText) (findViewById(R.id.editText1))).getText().toString()
                 , ((EditText) (findViewById(R.id.editText2))).getText().toString(),
                 new ResultHandler());
