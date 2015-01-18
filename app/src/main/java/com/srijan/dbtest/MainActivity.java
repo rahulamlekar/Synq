@@ -35,6 +35,8 @@ public class MainActivity extends ActionBarActivity {
             currUser = extra.getString("uid");
         }
         setContentView(R.layout.activity_main);
+        c = new Card();
+        post = (Button) findViewById(R.id.postinfo);
 
         post.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +52,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void setField() {
+        String firstName = ((EditText) (findViewById(R.id.editFirst))).getText().toString();
         c.firstName = ((EditText) (findViewById(R.id.editFirst))).getText().toString();
         c.lastName = ((EditText) (findViewById(R.id.editLast))).getText().toString();
         c.emailID = ((EditText) (findViewById(R.id.editEmail))).getText().toString();
