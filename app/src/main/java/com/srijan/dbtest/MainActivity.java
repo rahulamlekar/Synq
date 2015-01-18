@@ -85,6 +85,10 @@ public class MainActivity extends ActionBarActivity {
 //            return true;
 //        }
 
+        if (id == R.id.action_logout) {
+            //LoginActivity.logout();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

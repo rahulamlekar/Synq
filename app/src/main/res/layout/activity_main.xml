@@ -94,5 +94,18 @@
         android:id="@+id/postinfo"
         android:onClick="postinfo"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sync Now"
+        android:id="@+id/syncButton"
+        android:onClick="sync"
+        android:layout_alignTop="@+id/postinfo"
+        android:layout_alignRight="@+id/editPhone3"
+        android:layout_alignEnd="@+id/editPhone3"
+        android:layout_alignParentRight="false" />
 </RelativeLayout>
