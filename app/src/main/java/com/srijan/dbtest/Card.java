@@ -16,6 +16,10 @@ public class Card {
 //    public ContactsContract.CommonDataKinds.Photo picture;
 //    public ContactsContract.CommonDataKinds.StructuredName fullName;
 
+    Card() {
+       numbers = new HashMap<String, String>();
+    }
+
     public String firstName, lastName, emailID;
     public HashMap<String, String> numbers;
 

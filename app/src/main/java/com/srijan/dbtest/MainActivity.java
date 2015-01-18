@@ -62,6 +62,7 @@ public class MainActivity extends ActionBarActivity {
         c.numbers.put("TYPE_MOBILE", mobile);
         c.numbers.put("TYPE_HOME", home);
         c.numbers.put("TYPE_WORK", work);
+        postinfo();
     }
 
 
