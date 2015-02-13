@@ -66,7 +66,7 @@ public class LoginActivity extends ActionBarActivity {
 
         mLoggedInStatusTextView = (TextView) findViewById(R.id.login_status);
 
-        mFirebaseRef = new Firebase("https://scorching-heat-4537.firebaseio.com/");
+        mFirebaseRef = new Firebase("https://2340beastcode.firebaseio.com/");
 
         /* Setup the progress dialog that is displayed later when authenticating with Firebase */
         mAuthProgressDialog = new ProgressDialog(this);
@@ -106,6 +106,11 @@ public class LoginActivity extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void cancelLogin(View view) {
+        Intent i = new Intent(getBaseContext(), Home.class);
+        startActivityForResult(i, 1);
     }
 
     /**
@@ -186,7 +191,7 @@ public class LoginActivity extends ActionBarActivity {
             Log.i(TAG, provider + " auth successful");
             setAuthenticatedUser(authData);
             String uid = authData.getUid();
-            Intent i = new Intent(getBaseContext(), MainActivity.class);
+            Intent i = new Intent(getBaseContext(), Authenticated.class);
             i.putExtra("uid", uid);
             startActivityForResult(i, 1);
             overridePendingTransition(R.anim.push_up, R.anim.blank);

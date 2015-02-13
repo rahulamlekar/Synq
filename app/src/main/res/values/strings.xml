@@ -13,5 +13,7 @@
     <string name="title_activity_profile">Profile</string>
     <string name="name">Name</string>
     <string name="mobile">Mobile No</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_authenticated">Authenticated</string>
 
 </resources>
