@@ -232,9 +232,5 @@ public class LoginActivity extends ActionBarActivity {
         mFirebaseRef.authWithPassword(email, password, new AuthResultHandler(password));
     }
 
-    public void add (View view) {
-        Intent intent = new Intent(this, UsersList.class);
-        startActivityForResult(intent, 1);
-        overridePendingTransition(R.anim.push_up, R.anim.blank);
-    }
+
 }

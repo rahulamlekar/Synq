@@ -17,5 +17,4 @@ public class Model{
     public int getValue(){
         return this.value;
     }
-
 }
