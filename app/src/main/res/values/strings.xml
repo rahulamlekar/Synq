@@ -15,5 +15,7 @@
     <string name="mobile">Mobile No</string>
     <string name="title_activity_home">Home</string>
     <string name="title_activity_authenticated">Authenticated</string>
+    <string name="title_activity_friend_list">FriendList</string>
+    <string name="title_activity_users_list">UsersList</string>
 
 </resources>
